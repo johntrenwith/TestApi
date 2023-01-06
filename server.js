@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.listen(PORT, () => {
 console.log(`Server running on port ${PORT}`);
 });
+// Export the Express API
+module.exports = app;
 
 app.post('/calculate', (req, res) => {
        // Performs a calculation

@@ -28,10 +28,13 @@ if (!Object.keys(req.body).length) {
            });
     }
     try {
-
+        var borrowing = (total_income - total_liabilities) * 4;
+        // note: + 10000 is a deliberate error 
+        var property = borrowing + deposit + 10000;
+        
         const result = {
-            borrowing: total_income - total_liabilities,
-            property: total_income - total_liabilities + deposit
+            borrowing: borrowing,
+            property: property
             };
 
            res.status(200).json({

@@ -7,13 +7,6 @@ const PORT = 8080;
 app.use(express.json());
 // parse URL encoded data
 app.use(express.urlencoded({ extended: true }));
-// create a server
-app.listen(PORT, () => {
-console.log(`Server running on port ${PORT}`);
-});
-// Export the Express API
-module.exports = app;
-
 app.post('/calculate', (req, res) => {
        // Performs a calculation
     // Check if request body is empty
@@ -48,3 +41,9 @@ if (!Object.keys(req.body).length) {
              });
          }
     });
+// create a server
+app.listen(PORT, () => {
+console.log(`Server running on port ${PORT}`);
+});
+// Export the Express API
+module.exports = app;

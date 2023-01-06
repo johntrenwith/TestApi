@@ -7,6 +7,13 @@ const PORT = 8080;
 app.use(express.json());
 // parse URL encoded data
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/calculate', (req, res) => {
+    return res.status(200).json({
+             message: "Welcome to the calculator API. Please POST your inputs",
+           });
+});
+
 app.post('/calculate', (req, res) => {
        // Performs a calculation
     // Check if request body is empty

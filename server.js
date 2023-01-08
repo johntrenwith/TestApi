@@ -23,6 +23,7 @@ if (!Object.keys(req.body).length) {
        });
     }
     // get income, liabilities and deposit
+    const multiplier = 5;
     const { total_income, total_liabilities, deposit } = req.body;
     if (!total_income || !total_liabilities || !deposit) {
            res.status(400).json({
@@ -30,7 +31,7 @@ if (!Object.keys(req.body).length) {
            });
     }
     try {
-        var borrowing = (total_income - total_liabilities) * 4;
+        var borrowing = total_income * multiplier - total_liabilities;
         // note: + 10000 is a deliberate error 
         var property = borrowing + deposit + 10000;
         

@@ -31,7 +31,7 @@ if (!Object.keys(req.body).length) {
     // get income, liabilities and deposit
     const multiplier = 5;
     const { total_income, total_liabilities, deposit } = req.body;
-    if (!total_income || !total_liabilities || !deposit) {
+    if (!total_income || total_liabilities.length == 0 || !deposit) {
            res.status(400).json({
              message: "Ensure you have provided income, liabilities and deposit",
            });

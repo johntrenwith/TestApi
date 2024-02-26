@@ -37,9 +37,8 @@ if (!Object.keys(req.body).length) {
            });
     }
     try {
-        var borrowing = total_income * multiplier - total_liabilities;
-        // note: + 10000 is a deliberate error 
-        var property = borrowing + deposit + 10000;
+        var borrowing = total_income * multiplier - total_liabilities;        
+        var property = borrowing + deposit;
         
         const result = {
             borrowing: borrowing,
